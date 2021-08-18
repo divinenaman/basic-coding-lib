@@ -116,6 +116,6 @@ int main() {
 	merge_arr_weird(arr1,arr2,10,10);
 
 	for(int i=0; i<10; i++) cout<<arr1[i]<<" ";
-		for(int i=0; i<10; i++) cout<<arr2[i]<<" ";	
-			cout<<endl;
-	}
+	for(int i=0; i<10; i++) cout<<arr2[i]<<" ";	
+	cout<<endl;
+}
