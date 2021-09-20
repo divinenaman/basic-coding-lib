@@ -7,7 +7,37 @@
 #         self.left = None
 #         self.right = None
 
-class Solution:
+
+
+class Solution1:
+    """
+        Time: O(N)
+        Space: O(N)
+        Runtime: 74ms (leetcode)
+    """
+            
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        self.ans = None
+        def recurse(curr_node):
+            left = recurse(curr_node.left)
+            right = recurse(curr_node.right)
+            mid = p == curr_node or q == curr_node
+
+            if mid + left + right >= 2:
+                self.ans = curr_node
+            
+            return mid or left or right
+
+        recurse(root)
+        return self.ans
+
+class Solution2:
+    """
+        Time: O(N)
+        Space: O(N)
+        Runtime: 64ms (leetcode)
+    """
+    
     def getDepths(self,root,d,p,adj):
         if root != None:
             adj[root.val] = (p,root,d)
@@ -15,10 +45,6 @@ class Solution:
             self.getDepths(root.right,d+1,root.val,adj)
             
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        # 2x
-        # 2x + 1
-        
-        # bfs add depth
         adj = {}
         self.getDepths(root,0,None,adj)
                 
