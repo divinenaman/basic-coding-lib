@@ -1,4 +1,5 @@
 # AVL Trees
+# https://www.hackerrank.com/challenges/self-balancing-tree/problem
 
 class BST:
     def __init__(self,val):
@@ -22,12 +23,20 @@ def getHeight(node):
     return 0
 
 def rightRotate(node):
+    # interchange value
     v1 = node.val
     node.val = node.left.val
     node.left.val = v1
+    
+    # get left node (with interchanged value, target is to make it right child of root)
     old_left_child = node.left
+    
+    # set root's left child to root's left child's left child 
     node.left = node.left.left
+    
+    # interchange root's old left child children (why we don't need left child, it's now the left child of root [line-35])
     old_left_child.left = old_left_child.right
+    
     old_left_child.right = node.right
     node.right = old_left_child
 
@@ -36,12 +45,20 @@ def rightRotate(node):
     node.ht = max(getHeight(node.left),getHeight(node.right))
 
 def leftRotate(node):
+    # interchange value
     v1 = node.val
     node.val = node.right.val
     node.right.val = v1
+    
+    # get right node (with interchanged value, target is to make it left child of root)
     old_right_child = node.right
+    
+    # set root's right child to root's right child's right child
     node.right = node.right.right
+
+    # interchange root's old right child children (why we don't need right child, it's now the right child of root [line-56])
     old_right_child.right = old_right_child.left
+
     old_right_child.left = node.left
     node.left = old_right_child
 
