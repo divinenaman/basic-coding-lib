@@ -23,6 +23,9 @@ using namespace std;
 // 	}
 // }
 
+
+// kadanne's algorithm
+
 int max_sum(int arr[],int n) {
 	int max_now = 0, max = 0;
 
