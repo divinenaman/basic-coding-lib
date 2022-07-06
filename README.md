@@ -4,6 +4,7 @@
 - [Conatiner with most water](./TwoPointer/container_with_most_water.py)
 - [Wood Cutting made easy](./BinarySearch/wood_cutting_made_easy.py)
 - [Valid BST from preorder](./Trees/valid_bst_from_preorder.py)
+- [Disjoint Intervals](./Greedy/disjoint_intervals.py)
 
 # New Algorithms
 
