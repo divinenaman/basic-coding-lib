@@ -11,7 +11,7 @@
 
 - Kadane Algo
     - [Max sum of continuous subarray](./Array/max_sum_contiguous_subarr.py)
-
+    - [Max sum of continuous circular array](./Array/max_sum_contiguous_circular_array.py)
 
 - Floyd's hare tortoise algo
     
